@@ -39,7 +39,8 @@ import io.antmedia.android.broadcaster.LiveVideoBroadcaster;
 import io.antmedia.android.broadcaster.utils.Resolution;
 import io.antmedia.android.liveVideoBroadcaster.R;
 
-import static io.antmedia.android.MainActivity.RTMP_BASE_URL;
+import static io.antmedia.android.Dashboard.DashboardAcitivity.RTMP_BASE_URL;
+
 
 public class BroadcastActivity extends AppCompatActivity {
 
@@ -108,7 +109,7 @@ public class BroadcastActivity extends AppCompatActivity {
         btnShare = findViewById(R.id.btnShare);
         btnChat = findViewById(R.id.btnChat);
         btnStart = findViewById(R.id.btnStart);
-        mRootView = findViewById(R.id.rootLayout);
+        mRootView = findViewById(R.id.root_layout);
         TimerHandler = new TimerHandler();
 
         if (gls != null) {
@@ -308,7 +309,8 @@ public class BroadcastActivity extends AppCompatActivity {
                                 tvStatus.setVisibility(View.VISIBLE);
 
                                 btnStart.setText("STOP");
-                                btnSetting.setVisibility(View.GONE);
+                                btnSetting.setClickable(false);
+                                btnChat.setClickable(true);
                                 startTimer();//start the recording duration
                             }
                             else {
@@ -347,7 +349,9 @@ public class BroadcastActivity extends AppCompatActivity {
 
             tvStatus.setVisibility(View.GONE);
             tvStatus.setText("ON AIR");
-            btnSetting.setVisibility(View.VISIBLE);
+            btnSetting.setClickable(true);
+            btnRec.setClickable(false);
+            btnChat.setClickable(false);
 
             stopTimer();
             mLiveVideoBroadcaster.stopBroadcasting();

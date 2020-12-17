@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.antmedia.android.liveVideoPlayer;
+package io.antmedia.android.Play;
 
 import android.os.SystemClock;
 import android.util.Log;
@@ -56,7 +56,7 @@ import java.util.Locale;
 /**
  * Logs player events using {@link Log}.
  */
-/* package */ public final class EventLogger implements ExoPlayer.EventListener,
+/* package */ final class EventLogger implements ExoPlayer.EventListener,
         AudioRendererEventListener, VideoRendererEventListener, AdaptiveMediaSourceEventListener,
     ExtractorMediaSource.EventListener, DefaultDrmSessionManager.EventListener,
     MetadataRenderer.Output {
